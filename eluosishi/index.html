@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>俄罗斯视频-高清俄语影视资源与深度解析平台</title>
+    <meta name="description" content="俄罗斯视频平台，提供海量高清俄语电影、电视剧、纪录片及短视频内容。涵盖苏联经典、现代俄剧、文化探索及留学素材，支持中英双语字幕，助您深入了解俄罗斯文化。">
+    <meta name="keywords" content="俄罗斯视频,俄语电影,俄罗斯电视剧,俄语纪录片,俄罗斯文化,高清俄语视频">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .search-box {
+            display: flex;
+            background: #f1f3f5;
+            border-radius: 20px;
+            padding: 4px 12px;
+            width: 240px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            flex: 1;
+            padding: 4px;
+            font-size: 0.9rem;
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .view-all {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .thumbnail-wrapper {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #000;
+        }
+
+        .thumbnail-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .video-card:hover .play-icon {
+            opacity: 1;
+        }
+
+        .play-icon::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 12px solid white;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            margin-left: 4px;
+        }
+
+        .card-info {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .badge {
+            background-color: #e9ecef;
+            color: var(--text-secondary);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .badge.featured {
+            background-color: #fff0f0;
+            color: var(--accent-color);
+        }
+
+        /* Sidebar & Content Split */
+        .content-split {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .content-split {
+                grid-template-columns: 1fr;
+            }
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 16px;
+                gap: 12px;
+            }
+            nav ul {
+                gap: 12px;
+                font-size: 0.85rem;
+            }
+            .search-box {
+                width: 100%;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Sidebar */
+        aside {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        aside h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            margin-bottom: 10px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        .category-list a:hover {
+            color: var(--accent-color);
+            padding-left: 4px;
+        }
+
+        .count {
+            background: #f1f3f5;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Info Section */
+        .info-section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .info-section h2 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .info-item h4 {
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .info-item p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #ecf0f1;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: #95a5a6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+            俄罗斯视频<span>Hub</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">电影</a></li>
+                <li><a href="#">电视剧</a></li>
+                <li><a href="#">纪录片</a></li>
+                <li><a href="#">文化</a></li>
+            </ul>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="搜索俄语内容...">
+            <button type="button">🔍</button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>探索俄罗斯视频世界</h1>
+        <p>汇聚全球最优质的俄语影视资源，从苏联经典到现代大片，带您领略东欧文化的独特魅力。</p>
+        <div class="hero-stats">
+            <span>🎬 12,000+ 部作品</span>
+            <span>🌍 多语言字幕支持</span>
+            <span>🚀 4K 超清画质</span>
+        </div>
+    </div>
+</section>
+
+<main class="container">
+    <!-- Featured Section -->
+    <section>
+        <div class="section-header">
+            <h2 class="section-title">本周热门推荐</h2>
+            <a href="#" class="view-all">查看全部 ></a>
+        </div>
+        <div class="video-grid">
+            <article class="video-card">
+                <div class="thumbnail-wrapper">
+                    <img src="https://picsum.photos/seed/russia1/400/225" alt="电影封面">
+                    <div class="play-icon"></div>
+                    <span class="badge featured">热播</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">莫斯科行动：俄罗斯犯罪惊悚片</h3>
+                    <div class="card-meta">
+                        <span>2023</span>
+                        <span>1h 45m</span>
+                        <span>动作 / 犯罪</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="video-card">
+                <div class="thumbnail-wrapper">
+                    <img src="https://picsum.photos/seed/russia2/400/225" alt="电视剧封面">
+                    <div class="play-icon"></div>
+                    <span class="badge">新剧</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">西伯利亚的泰加林：自然纪录片</h3>
+                    <div class="card-meta">
+                        <span>2024</span>
+                        <span>52m</span>
+                        <span>自然 / 纪录</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="video-card">
+                <div class="thumbnail-wrapper">
+                    <img src="https://picsum.photos/seed/russia3/400/225" alt="影视封面">
+                    <div class="play-icon"></div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">叶卡捷琳娜大帝：帝国崛起</h3>
+                    <div class="card-meta">
+                        <span>2022</span>
+                        <span>4季</span>
+                        <span>历史 / 剧情</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="video-card">
+                <div class="thumbnail-wrapper">
+                    <img src="https://picsum.photos/seed/russia4/400/225" alt="影视封面">
+                    <div class="play-icon"></div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">伏尔加河上的夕阳：风景短片</h3>
+                    <div class="card-meta">
+                        <span>2023</span>
+                        <span>12m</span>
+                        <span>风景 / 短片</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <div class="content-split">
+        <!-- Main Content: Categories & Lists -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">热门分类</h2>
+            </div>
+            <div class="info-section">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h4>苏联经典</h4>
+                        <p>重温红色电影黄金时代的经典之作，感受那个时代的艺术气息与历史厚重感。</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>现代俄剧</h4>
+                        <p>聚焦当代俄罗斯社会生活，探讨家庭、职场与情感纠葛，剧情紧凑引人入胜。</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>文化探索</h4>
+                        <p>深入了解俄罗斯文学、芭蕾舞、建筑及冬宫艺术，通过视频直观感受文化魅力。</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>语言学习</h4>
+                        <p>专为俄语初学者设计的日常对话与情景教学视频，轻松掌握地道表达。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2 class="section-title">最新更新</h2>
+            </div>
+            <div class="video-grid">
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/russia5/400/225" alt="更新封面">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">圣彼得堡：北方威尼斯之旅</h3>
+                        <div class="card-meta">
+                            <span>2024-05-20</span>
+                            <span>旅游</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/russia6/400/225" alt="更新封面">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">俄语基础发音教程：元音篇</h3>
+                        <div class="card-meta">
+                            <span>2024-05-19</span>
+                            <span>教育</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/russia7/400/225" alt="更新封面">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">战斗民族硬核生活：西伯利亚</h3>
+                        <div class="card-meta">
+                            <span>2024-05-18</span>
+                            <span>生活</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sidebar -->
+        <aside>
+            <h3>浏览分类</h3>
+            <ul class="category-list">
+                <li><a href="#">🎬 电影 <span class="count">4,200+</span></a></li>
+                <li><a href="#">📺 电视剧 <span class="count">3,500+</span></a></li>
+                <li><a href="#">🌍 纪录片 <span class="count">1,800+</span></a></li>
+                <li><a href="#">📚 文学改编 <span class="count">500+</span></a></li>
+                <li><a href="#">🎭 芭蕾与歌剧 <span class="count">300+</span></a></li>
+                <li><a href="#">🗣️ 俄语教学 <span class="count">900+</span></a></li>
+                <li><a href="#">🏔️ 风景摄影 <span class="count">1,200+</span></a></li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">热门标签</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                <a href="#" style="background:#e9ecef; padding:4px 10px; border-radius:4px; font-size:0.85rem;">索契</a>
+                <a href="#" style="background:#e9ecef; padding:4px 10px; border-radius:4px; font-size:0.85rem;">冬宫</a>
+                <a href="#" style="background:#e9ecef; padding:4px 10px; border-radius:4px; font-size:0.85rem;">伏尔加河</a>
+                <a href="#" style="background:#e9ecef; padding:4px 10px; border-radius:4px; font-size:0.85rem;">西伯利亚</a>
+                <a href="#" style="background:#e9ecef; padding:4px 10px; border-radius:4px; font-size:0.85rem;">托尔斯泰</a>
+                <a href="#" style="background:#e9ecef; padding:4px 10px; border-radius:4px; font-size:0.85rem;">红场</a>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>俄罗斯视频Hub</h4>
+            <p style="color: #bdc3c7; font-size: 0.9rem; line-height: 1.6;">
+                致力于为中文用户提供最全面、最优质的俄语视频资源。无论是学习语言、了解文化，还是单纯欣赏影视作品，这里都是您的最佳选择。
+            </p>
+        </div>
+        <div class="footer-col">
+            <h4>快速链接</h4>
+            <ul>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">版权声明</a></li>
+                <li><a href="#">帮助中心</a></li>
+                <li><a href="#">联系方式</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>内容分类</h4>
+            <ul>
+                <li><a href="#">电影推荐</a></li>
+                <li><a href="#">电视剧集</a></li>
+                <li><a href="#">纪录片库</a></li>
+                <li><a href="#">文化专题</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>关注我们</h4>
+            <ul>
+                <li><a href="#">微信公众号</a></li>
+                <li><a href="#">新浪微博</a></li>
+                <li><a href="#">Bilibili账号</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2024 俄罗斯视频Hub. All rights reserved. 本站内容仅供学习交流使用，版权归原作者所有。
+    </div>
+</footer>
+
+</body>
+</html>
