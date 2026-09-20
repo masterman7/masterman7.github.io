@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>洗染店-专业衣物护理与干洗服务指南</title>
+    <meta name="description" content="本站提供专业的洗染店服务介绍、衣物护理常识、去渍技巧及洗染店选择指南，帮助您了解不同面料的正确洗涤方式，解决衣物污渍难题。">
+    <meta name="keywords" content="洗染店,干洗店,衣物护理,去渍,干洗指南,洗衣常识">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-light: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: var(--radius);
+            font-weight: 600;
+        }
+
+        .cta-button:hover {
+            background-color: #d35400;
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .search-box {
+            background: var(--white);
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-flex;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 50px;
+        }
+
+        .search-box button {
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: #d35400;
+        }
+
+        /* Services Section */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            border-top-color: var(--accent-color);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Care Guide Section */
+        .care-guide {
+            background-color: var(--white);
+        }
+
+        .guide-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+
+        .guide-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ecf0f1;
+            line-height: 1;
+            min-width: 60px;
+        }
+
+        .guide-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .guide-content p {
+            color: var(--text-light);
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: #f1f2f6;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: var(--text-light);
+            background-color: #fafafa;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span>✚</span> 洁净工坊
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#services">服务项目</a></li>
+                    <li><a href="#guide">护理指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-button">预约干洗</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>专业洗染店<br>让衣物重焕新生</h1>
+                <p>我们提供专业的干洗、水洗、去渍及皮革护理服务。针对不同面料与污渍类型，采用科学洗涤工艺，保护衣物纤维，延长衣物寿命。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="搜索附近的洗染店或服务项目...">
+                    <button>搜索</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>核心服务项目</h2>
+                    <p>我们提供全方位的衣物护理解决方案，满足您的多样化需求</p>
+                </div>
+                <div class="grid-3">
+                    <article class="card">
+                        <div class="card-icon">👔</div>
+                        <h3>专业干洗</h3>
+                        <p>采用低温环保干洗剂，有效去除油渍、汗渍及灰尘，特别适合羊毛、丝绸、化纤等不宜水洗的高级面料。</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">🧥</div>
+                        <h3>皮革护理</h3>
+                        <p>提供皮衣、皮鞋、皮包的专业清洁、上光、补色及保养服务，修复划痕，恢复皮革原有质感。</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">🧼</div>
+                        <h3>精细去渍</h3>
+                        <p>针对红酒渍、墨水渍、油彩渍等顽固污渍，提供局部针对性处理，最大限度保留衣物原样。</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">👗</div>
+                        <h3>成衣改衣</h3>
+                        <p>提供量身定制的改裤脚、收腰、修改袖长等服务，让您的衣物更加合身舒适。</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">🛏️</div>
+                        <h3>家纺清洗</h3>
+                        <p>提供高档窗帘、沙发套、床品的深层清洗服务，去除螨虫和深层污垢，改善居家卫生环境。</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">🎒</div>
+                        <h3>奢侈品护理</h3>
+                        <p>针对奢侈品箱包、鞋履提供专业的清洗与养护，确保您的贵重物品得到最专业的呵护。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="section care-guide">
+            <div class="container">
+                <div class="section-title">
+                    <h2>衣物护理常识</h2>
+                    <p>了解面料特性与洗涤禁忌，避免因操作不当造成不可逆的损坏</p>
+                </div>
+                <div class="guide-list">
+                    <div class="guide-item">
+                        <div class="guide-number">01</div>
+                        <div class="guide-content">
+                            <h3>查看水洗标</h3>
+                            <p>在洗涤任何衣物前，请务必检查衣物上的水洗标。水洗标通常会注明洗涤温度、是否可漂白、是否需要干洗以及推荐使用的洗涤剂类型。这是保护衣物最简单有效的方法。</p>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-number">02</div>
+                        <div class="guide-content">
+                            <h3>分类洗涤</h3>
+                            <p>深色衣物与浅色衣物应分开洗涤，以免染色。不同材质的衣物也应分开，特别是棉织物与羊毛织物，防止纤维受损或起球。内衣裤与外衣建议分开清洗。</p>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-number">03</div>
+                        <div class="guide-content">
+                            <h3>预处理污渍</h3>
+                            <p>发现污渍应及时处理。对于干性污渍（如油渍），可在洗涤前用专用去渍剂局部涂抹；对于液体污渍，应尽快用清水冲洗，减少污渍渗入纤维的机会。</p>
+                        </div>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-number">04</div>
+                        <div class="guide-content">
+                            <h3>低温烘干</h3>
+                            <p>高温烘干容易导致衣物缩水、变形或褪色。建议优先选择自然晾干，或使用低温烘干模式。羊毛、丝绸等娇贵面料更适合低温或平铺晾干。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>关于洗染服务的常见疑问与解答</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">干洗和水洗有什么区别？</div>
+                        <div class="faq-answer">
+                            <p>干洗使用有机溶剂（如四氯乙烯）去除污渍，无需大量水，适合不宜水洗的高级面料（如羊毛、丝绸）。水洗则是通过水、洗涤剂和机械作用去除污渍，适合棉、麻等耐水洗面料。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">干洗后的衣物有味道怎么办？</div>
+                        <div class="faq-answer">
+                            <p>刚取出的干洗衣物通常会有轻微的溶剂味道。建议将衣物挂在通风良好的地方晾晒1-2小时，味道通常会自然挥发消失。我们的洗染店使用环保型干洗剂，气味较淡。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">贵重物品送洗需要注意什么？</div>
+                        <div class="faq-answer">
+                            <p>送洗贵重衣物（如名牌皮衣、钻石饰品）时，建议保留购物凭证。送洗前请告知工作人员衣物上的特殊装饰品（如亮片、水钻）的位置，以便工作人员小心处理，防止脱落。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">衣物洗坏了可以索赔吗？</div>
+                        <div class="faq-answer">
+                            <p>如果因洗染店操作不当（如未按水洗标洗涤、洗涤温度过高）导致衣物损坏，洗染店应承担相应的赔偿责任。建议保留衣物送洗前的照片作为凭证。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact/CTA Section -->
+        <section id="contact" class="section" style="background-color: var(--white);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>联系我们</h2>
+                    <p>专业的服务团队，期待为您提供优质的衣物护理体验</p>
+                </div>
+                <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                    <p style="margin-bottom: 20px; font-size: 1.1rem;">
+                        <strong>营业时间：</strong> 08:00 - 20:00 (全年无休)<br>
+                        <strong>地址：</strong> XX市XX区XX路XX号<br>
+                        <strong>电话：</strong> 010-12345678
+                    </p>
+                    <a href="tel:01012345678" class="cta-button" style="font-size: 1.2rem; padding: 15px 40px;">立即致电预约</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>洁净工坊</h4>
+                    <p style="color: #bdc3c7; font-size: 0.9rem;">
+                        专注于高端衣物护理，致力于为每一位客户提供专业、放心、环保的洗染服务。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>服务项目</h4>
+                    <ul>
+                        <li><a href="#">专业干洗</a></li>
+                        <li><a href="#">皮革护理</a></li>
+                        <li><a href="#">奢侈品护理</a></li>
+                        <li><a href="#">家纺清洗</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">衣物护理指南</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">会员服务</a></li>
+                        <li><a href="#">在线预约</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">小红书账号</a></li>
+                        <li><a href="#">大众点评</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 洁净工坊洗染服务. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 如果需要手风琴效果（点一个关其他的），取消下面注释
+                    /*
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) otherItem.classList.remove('active');
+                    });
+                    */
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
