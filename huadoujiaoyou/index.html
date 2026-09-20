@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花都交友-本地真实社交平台与高质量约会指南</title>
+    <meta name="description" content="花都交友网提供花都区真实的本地交友服务，涵盖单身派对、兴趣社群、同城相亲及恋爱技巧分享。拒绝虚假资料，致力于帮助花都居民建立真实、健康的社交关系。">
+    <meta name="keywords" content="花都交友, 花都约会, 广州花都相亲, 花都交友平台, 花都搭子">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --primary-hover: #ff6b81;
+            --secondary-color: #2f3542;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-light: #747d8c;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            padding: 80px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #57606f;
+            margin-bottom: 40px;
+        }
+
+        .search-box {
+            background: white;
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-flex;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .search-box input {
+            border: none;
+            flex: 1;
+            padding: 12px 20px;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 50px;
+        }
+
+        .search-box button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: -40px;
+            padding-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 20px 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Categories Section */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cat-icon {
+            width: 60px;
+            height: 60px;
+            background: #ffeaa7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+        }
+
+        .category-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .category-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Featured Profiles */
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .profile-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            background-color: #dfe4ea;
+        }
+
+        .profile-info {
+            padding: 20px;
+        }
+
+        .profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .profile-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .profile-location {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .profile-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background: #f1f2f6;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .profile-bio {
+            font-size: 0.9rem;
+            color: #57606f;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .profile-footer {
+            border-top: 1px solid #f1f2f6;
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .like-btn {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .chat-btn {
+            background: var(--secondary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: white;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .guide-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .guide-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .guide-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .guide-image {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Safety Tips */
+        .safety-tips {
+            background: #2f3542;
+            color: white;
+            padding: 60px 0;
+        }
+
+        .safety-tips h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .tip-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: var(--border-radius);
+        }
+
+        .tip-card h3 {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tip-icon {
+            color: #ff6b81;
+        }
+
+        /* Footer */
+        footer {
+            background: #17202a;
+            color: #a4b0be;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats {
+                gap: 20px;
+                margin-top: -20px;
+            }
+
+            .stat-item {
+                padding: 15px 20px;
+                min-width: 120px;
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span>❤</span> 花都交友
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#profiles">会员列表</a></li>
+                    <li><a href="#guide">交友指南</a></li>
+                    <li><a href="#safety">安全提示</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">免费注册</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>在花都，遇见真实的你</h1>
+                <p>汇聚花都区及周边地区的高质量单身人群，拒绝虚假资料，专注于本地真实的社交与情感连接。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="搜索兴趣、年龄、职业或位置...">
+                    <button>搜索</button>
+                </div>
+            </div>
+            <div class="container stats">
+                <div class="stat-item">
+                    <span class="stat-number">15万+</span>
+                    <span class="stat-label">注册会员</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8,000+</span>
+                    <span class="stat-label">本月配对</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">实名认证</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>发现你的社交圈子</h2>
+                    <p>无论你是想寻找恋爱伴侣，还是拓展生活兴趣，这里都有适合你的板块</p>
+                </div>
+                <div class="category-grid">
+                    <article class="category-card">
+                        <div class="cat-icon">💑</div>
+                        <h3>严肃相亲</h3>
+                        <p>基于家庭介绍与个人档案的严肃婚恋服务，高效筛选合适对象。</p>
+                    </article>
+                    <article class="category-card">
+                        <div class="cat-icon">🎉</div>
+                        <h3>同城派对</h3>
+                        <p>定期举办花都线下主题活动，在轻松氛围中结识新朋友。</p>
+                    </article>
+                    <article class="category-card">
+                        <div class="cat-icon">🎨</div>
+                        <h3>兴趣社群</h3>
+                        <p>摄影、徒步、桌游、读书会，找到志同道合的搭子。</p>
+                    </article>
+                    <article class="category-card">
+                        <div class="cat-icon">💬</div>
+                        <h3>在线聊天</h3>
+                        <p>即时通讯，匿名交流，分享生活点滴，打破社交隔阂。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Profiles -->
+        <section id="profiles" class="section" style="background-color: #f8f9fa;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>热门会员推荐</h2>
+                    <p>今日精选，看看谁在关注你</p>
+                </div>
+                <div class="profiles-grid">
+                    <!-- Profile 1 -->
+                    <article class="profile-card">
+                        <img src="https://picsum.photos/seed/girl1/400/500" alt="花都交友会员头像" class="profile-img">
+                        <div class="profile-info">
+                            <div class="profile-header">
+                                <h3 class="profile-name">林小姐</h3>
+                                <span class="profile-location">📍 花都新华街</span>
+                            </div>
+                            <div class="profile-tags">
+                                <span class="tag">26岁</span>
+                                <span class="tag">教师</span>
+                                <span class="tag">文艺</span>
+                            </div>
+                            <p class="profile-bio">平时喜欢看书、画画，周末喜欢去花都图书馆。希望能遇到一个懂生活、有责任心的男生。</p>
+                            <div class="profile-footer">
+                                <span class="like-btn">❤ 128人喜欢</span>
+                                <button class="chat-btn">私聊</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Profile 2 -->
+                    <article class="profile-card">
+                        <img src="https://picsum.photos/seed/guy1/400/500" alt="花都交友会员头像" class="profile-img">
+                        <div class="profile-info">
+                            <div class="profile-header">
+                                <h3 class="profile-name">张先生</h3>
+                                <span class="profile-location">📍 花都狮岭镇</span>
+                            </div>
+                            <div class="profile-tags">
+                                <span class="tag">29岁</span>
+                                <span class="tag">销售经理</span>
+                                <span class="tag">运动</span>
+                            </div>
+                            <p class="profile-bio">性格开朗，喜欢篮球和健身。工作稳定，想在花都找一个能一起吃宵夜、聊天的伴侣。</p>
+                            <div class="profile-footer">
+                                <span class="like-btn">❤ 89人喜欢</span>
+                                <button class="chat-btn">私聊</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Profile 3 -->
+                    <article class="profile-card">
+                        <img src="https://picsum.photos/seed/girl2/400/500" alt="花都交友会员头像" class="profile-img">
+                        <div class="profile-info">
+                            <div class="profile-header">
+                                <h3 class="profile-name">陈小姐</h3>
+                                <span class="profile-location">📍 花都花城街</span>
+                            </div>
+                            <div class="profile-tags">
+                                <span class="tag">24岁</span>
+                                <span class="tag">设计师</span>
+                                <span class="tag">美食</span>
+                            </div>
+                            <p class="profile-bio">吃货一枚，探店达人。寻找一个能陪我一起探索花都所有美食的男朋友。</p>
+                            <div class="profile-footer">
+                                <span class="like-btn">❤ 205人喜欢</span>
+                                <button class="chat-btn">私聊</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Profile 4 -->
+                    <article class="profile-card">
+                        <img src="https://picsum.photos/seed/guy2/400/500" alt="花都交友会员头像" class="profile-img">
+                        <div class="profile-info">
+                            <div class="profile-header">
+                                <h3 class="profile-name">王先生</h3>
+                                <span class="profile-location">📍 花都炭步镇</span>
+                            </div>
+                            <div class="profile-tags">
+                                <span class="tag">31岁</span>
+                                <span class="tag">工程师</span>
+                                <span class="tag">IT</span>
+                            </div>
+                            <p class="profile-bio">工作比较忙，平时喜欢打游戏和看科幻电影。希望能认识性格温柔的女生。</p>
+                            <div class="profile-footer">
+                                <span class="like-btn">❤ 56人喜欢</span>
+                                <button class="chat-btn">私聊</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="section guide-section">
+            <div class="container">
+                <div class="guide-grid">
+                    <div class="guide-content">
+                        <h2>如何开启你的花都交友之旅？</h2>
+                        <ul class="guide-list">
+                            <li><strong>完善个人资料：</strong>上传真实照片，填写详细的兴趣爱好，让更多人看到真实的你。</li>
+                            <li><strong>设置筛选条件：</strong>根据年龄、职业、距离等条件精准筛选，提高匹配效率。</li>
+                            <li><strong>积极参与活动：</strong>关注平台发布的线下同城活动，线下见面比线上聊天更高效。</li>
+                            <li><strong>保持真诚沟通：</strong>尊重他人，坦诚交流，避免无效的“撩”和“杀猪盘”行为。</li>
+                        </ul>
+                        <button class="btn btn-primary" style="margin-top: 20px;">立即完善资料</button>
+                    </div>
+                    <div class="guide-image">
+                        <img src="https://picsum.photos/seed/meeting/600/400" alt="交友场景示意图" class="guide-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety Section -->
+        <section id="safety" class="safety-tips">
+            <div class="container">
+                <h2>安全交友小贴士</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h3><span class="tip-icon">🔒</span> 资料审核</h3>
+                        <p>平台对所有会员进行严格实名认证，拒绝虚假账号。</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3><span class="tip-icon">🛡️</span> 保护隐私</h3>
+                        <p>不要轻易透露家庭住址、工作单位等敏感信息，见面选择公共场所。</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3><span class="tip-icon">⚠️</span> 警惕诈骗</h3>
+                        <p>任何以“投资”、“博彩”、“借钱”为由的行为均为诈骗，请立即举报。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于花都交友</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        我们致力于打造花都区最安全、最真实的本地社交平台，帮助每一位会员找到心仪的另一半。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">会员注册</a></li>
+                        <li><a href="#">会员登录</a></li>
+                        <li><a href="#">同城活动</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>客服热线：020-1234-5678</li>
+                        <li>工作时间：9:00 - 22:00</li>
+                        <li>电子邮箱：support@huadujiyou.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 花都交友网 版权所有. 本网站仅提供交友信息展示服务，不直接提供线下约会服务。
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
