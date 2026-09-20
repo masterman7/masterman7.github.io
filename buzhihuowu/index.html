@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="不知火舞外星人 - 探索虚构宇宙中不知火舞作为外星战士的跨界故事，包含同人作品、设定解析及同人游戏下载。">
+    <meta name="keywords" content="不知火舞外星人, 不知火舞, 外星人, 超级战队, 同人创作, 游戏">
+    <title>不知火舞外星人 - 跨界同人宇宙与设定解析</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary: #ff4d4d;
+            --primary-dark: #cc0000;
+            --secondary: #ffcc00;
+            --dark: #1a1a1a;
+            --light: #f4f4f4;
+            --gray: #666;
+            --card-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* Header */
+        header {
+            background: rgba(26, 26, 26, 0.95);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--primary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span { color: white; }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after { width: 100%; }
+
+        .cta-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 77, 77, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b1b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            mix-blend-mode: overlay;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-tag {
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover { background-color: var(--primary-dark); }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-secondary:hover { background-color: white; color: var(--dark); }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            margin-top: 10px;
+        }
+
+        /* Story Concepts */
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .concept-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--primary);
+        }
+
+        .concept-icon {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .concept-body {
+            padding: 25px;
+        }
+
+        .concept-body h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .concept-body p {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Games Section */
+        .games-section {
+            background-color: #fff;
+            padding: 60px 20px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .game-card {
+            background: var(--light);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .game-card:hover {
+            transform: scale(1.02);
+            box-shadow: var(--card-shadow);
+        }
+
+        .game-thumb {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .game-info {
+            padding: 20px;
+        }
+
+        .game-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .game-desc {
+            font-size: 13px;
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .game-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background-color: #f9f9f9;
+            padding: 60px 20px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--dark);
+        }
+
+        .faq-question:hover {
+            background-color: #f1f1f1;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--gray);
+            font-size: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            padding-bottom: 20px;
+            max-height: 200px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: #aaa;
+            padding: 60px 20px 20px;
+            font-size: 14px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 { font-size: 32px; }
+            .hero-buttons { flex-direction: column; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span>🚀</span> 不知火舞外星人
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#concepts" class="active">设定宇宙</a></li>
+                    <li><a href="#games">同人游戏</a></li>
+                    <li><a href="#gallery">图鉴画廊</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#games" class="cta-btn">开始冒险</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="https://picsum.photos/seed/firefly/1600/900" alt="不知火舞外星人背景" class="hero-bg">
+            <div class="hero-content">
+                <span class="hero-tag">跨界同人宇宙</span>
+                <h1>当格斗女王遭遇星际入侵</h1>
+                <p>探索虚构的“阿斯拉特星”战场，见证不知火舞如何运用禁术“飞鼠”与异星生物展开殊死搏斗，开启属于她的外星传说。</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="document.getElementById('concepts').scrollIntoView({behavior: 'smooth'})">阅读设定</button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('games').scrollIntoView({behavior: 'smooth'})">下载游戏</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="concepts" class="container">
+            <div class="section-title">
+                <h2>核心设定解析</h2>
+                <p>深入理解“不知火舞外星人”这一跨次元概念的世界观与背景故事</p>
+            </div>
+            <div class="concepts-grid">
+                <article class="concept-card">
+                    <img src="https://picsum.photos/seed/marisoul/400/300" alt="阿斯拉特星背景" class="concept-icon">
+                    <div class="concept-body">
+                        <h3>阿斯拉特星</h3>
+                        <p>故事发生在一个高重力、能量充沛的异星球。这里居住着以能量光波战斗的“光灵族”。不知火舞因时空裂缝意外坠落至此，她的火焰忍术在这里被解读为一种罕见的“热能变异能力”。</p>
+                        <a href="#" class="read-more">查看详细档案 &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="concept-card">
+                    <img src="https://picsum.photos/seed/ninja/400/300" alt="异星忍术" class="concept-icon">
+                    <div class="concept-body">
+                        <h3>忍术与科技</h3>
+                        <p>面对外星机械军团，不知火舞将传统的“超必杀忍蜂”与外星科技结合。她学会了使用外星护盾器，并研发出能够干扰外星雷达的“不知火扇”。</p>
+                        <a href="#" class="read-more">学习战斗技巧 &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="concept-card">
+                    <img src="https://picsum.photos/seed/alliance/400/300" alt="星际同盟" class="concept-icon">
+                    <div class="concept-body">
+                        <h3>与春丽的星际结盟</h3>
+                        <p>在异星历险中，不知火舞与同样流落至此的春丽重逢。两人组成了“双龙小队”，利用各自的格斗技巧与外星首领展开周旋，寻找回家的路。</p>
+                        <a href="#" class="read-more">阅读双人漫画 &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="games" class="games-section">
+            <div class="section-title">
+                <h2>同人作品与游戏</h2>
+                <p>玩家社区创作的独立游戏与同人漫画合集</p>
+            </div>
+            <div class="games-grid">
+                <div class="game-card">
+                    <img src="https://picsum.photos/seed/game1/300/200" alt="游戏封面" class="game-thumb">
+                    <div class="game-info">
+                        <div class="game-title">舞动银河：光灵之战</div>
+                        <div class="game-desc">动作RPG游戏，体验不知火舞在异星世界的战斗与探索。</div>
+                        <div class="game-meta">
+                            <span>🎮 动作</span>
+                            <span>⭐ 4.8</span>
+                        </div>
+                        <br>
+                        <a href="#" class="btn btn-primary" style="width:100%; padding: 8px;">立即下载</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://picsum.photos/seed/game2/300/200" alt="游戏封面" class="game-thumb">
+                    <div class="game-info">
+                        <div class="game-title">扇舞反击：外星入侵</div>
+                        <div class="game-desc">快节奏横版过关游戏，收集外星道具强化你的扇子。</div>
+                        <div class="game-meta">
+                            <span>🎮 平台</span>
+                            <span>⭐ 4.5</span>
+                        </div>
+                        <br>
+                        <a href="#" class="btn btn-primary" style="width:100%; padding: 8px;">立即下载</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://picsum.photos/seed/game3/300/200" alt="游戏封面" class="game-thumb">
+                    <div class="game-info">
+                        <div class="game-title">星际格斗场：同人版</div>
+                        <div class="game-desc">基于MUGEN引擎制作的格斗合集，收录大量不知火舞外星皮肤。</div>
+                        <div class="game-meta">
+                            <span>🎮 格斗</span>
+                            <span>⭐ 4.9</span>
+                        </div>
+                        <br>
+                        <a href="#" class="btn btn-primary" style="width:100%; padding: 8px;">立即下载</a>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <img src="https://picsum.photos/seed/game4/300/200" alt="游戏封面" class="game-thumb">
+                    <div class="game-info">
+                        <div class="game-title">舞的异星日记</div>
+                        <div class="game-desc">文字冒险游戏，选择对话分支来决定不知火舞在阿斯拉特星的命运。</div>
+                        <div class="game-meta">
+                            <span>🎮 冒险</span>
+                            <span>⭐ 4.2</span>
+                        </div>
+                        <br>
+                        <a href="#" class="btn btn-primary" style="width:100%; padding: 8px;">立即下载</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题 (FAQ)</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            不知火舞外星人的故事是官方正史吗？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>不是。这是一个基于《饿狼传说》和《拳皇》角色的同人创作概念。它属于粉丝构建的跨界世界观，旨在探索角色在不同环境下的可能性。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            如何下载同人游戏？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>请点击上方游戏卡片中的“立即下载”按钮，或访问我们的资源库页面。所有游戏均为独立开发者制作，请确保您的设备支持相应的运行环境。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            可以投稿自己的同人作品吗？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>欢迎。我们接受同人小说、漫画、游戏源码及同人图的投稿。请在联系我们页面提交您的作品介绍及授权证明。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于不知火舞外星人</h4>
+                <p>致力于收录、整理和展示关于不知火舞这一角色的跨界同人创作，构建一个充满想象力的同人宇宙。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">设定宇宙</a></li>
+                    <li><a href="#">同人游戏</a></li>
+                    <li><a href="#">资源下载</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>法律声明</h4>
+                <ul>
+                    <li><a href="#">版权说明</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">免责声明</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <p>获取最新的同人作品资讯与游戏更新。</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 不知火舞外星人同人站. All Rights Reserved. 本站内容均为粉丝自制，与Capcom公司无关。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                const isActive = parent.classList.contains('active');
+                
+                // 关闭所有其他的
+                document.querySelectorAll('.faq-item').forEach(child => {
+                    child.classList.remove('active');
+                });
+
+                // 如果点击的不是已经打开的，则打开它
+                if (!isActive) {
+                    parent.classList.add('active');
+                }
+            });
+        });
+
+        // 导航栏滚动高亮
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
